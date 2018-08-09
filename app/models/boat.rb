@@ -28,7 +28,7 @@ def self.sailboats
 end
 
 def self.with_three_classifications
-  self.joins(:classifications).group_by('boat.id').having(count)
+  self.joins(:classifications).group_by('boat.id').having(count(classifications.id))
 end
 
 
